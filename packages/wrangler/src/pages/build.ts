@@ -105,6 +105,11 @@ export function Options(yargs: CommonYargsArgv) {
 				deprecated: true,
 				hidden: true,
 			},
+			external: {
+				describe: "A list of module imports to exclude from bundling",
+				type: "string",
+				array: true,
+			},
 		});
 }
 
@@ -128,6 +133,7 @@ export const Handler = async (args: PagesBuildArgs) => {
 			nodejsCompat,
 			legacyNodeCompat,
 			defineNavigatorUserAgent,
+			external,
 		} = validatedArgs;
 
 		try {
@@ -154,6 +160,7 @@ export const Handler = async (args: PagesBuildArgs) => {
 				routesOutputPath,
 				local: false,
 				defineNavigatorUserAgent,
+				external,
 			});
 		} catch (e) {
 			if (e instanceof FunctionsNoRoutesError) {
@@ -192,6 +199,7 @@ export const Handler = async (args: PagesBuildArgs) => {
 			legacyNodeCompat,
 			workerScriptPath,
 			defineNavigatorUserAgent,
+			external,
 		} = validatedArgs;
 
 		/**
@@ -222,6 +230,7 @@ export const Handler = async (args: PagesBuildArgs) => {
 					watch,
 					nodejsCompat,
 					defineNavigatorUserAgent,
+					externalModules: external,
 				});
 			}
 		} else {
@@ -247,6 +256,7 @@ export const Handler = async (args: PagesBuildArgs) => {
 					routesOutputPath,
 					local: false,
 					defineNavigatorUserAgent,
+					external,
 				});
 			} catch (e) {
 				if (e instanceof FunctionsNoRoutesError) {
