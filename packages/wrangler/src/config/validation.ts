@@ -42,6 +42,10 @@ import type { ValidatorFn } from "./validation-helpers";
 
 const ENGLISH = new Intl.ListFormat("en");
 
+export function isPagesConfig(rawConfig: RawConfig): boolean {
+	return rawConfig.pages_build_output_dir !== undefined;
+}
+
 /**
  * Validate the given `rawConfig` object that was loaded from `configPath`.
  *
@@ -155,6 +159,18 @@ export function normalizeAndValidateConfig(
 				rawConfig
 			);
 			diagnostics.addChild(envDiagnostics);
+		} else if (isPagesConfig(rawConfig)) {
+			// TODO add proper comment, but for now...
+			// Pages
+			activeEnv = normalizeAndValidateEnvironment(
+				envDiagnostics,
+				configPath,
+				rawConfig,
+				envName,
+				topLevelEnv,
+				isLegacyEnv,
+				rawConfig
+			);
 		} else {
 			// An environment was specified, but no configuration for it was found.
 			// To cover any legacy environment cases, where the `envName` is used,

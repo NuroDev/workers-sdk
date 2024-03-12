@@ -21,12 +21,25 @@ import type { CamelCaseKey } from "yargs";
  * - `@breaking`: the deprecation/optionality is a breaking change from Wrangler v1.
  * - `@todo`: there's more work to be done (with details attached).
  */
-export type Config = ConfigFields<DevConfig> & Environment;
+export type Config = ConfigFields<DevConfig> & PagesConfigFields & Environment;
 
 export type RawConfig = Partial<ConfigFields<RawDevConfig>> &
+	PagesConfigFields &
 	RawEnvironment &
 	DeprecatedConfigFields &
 	EnvironmentMap;
+
+// Pages-specific configuration fields
+export interface PagesConfigFields {
+	/**
+	 * The directory of static assets to serve.
+	 *
+	 * The presence of this field in `wrangler.toml` indicates a Pages project,
+	 * and will prompt the handling of the configuration file according to the
+	 * Pages-specific validation rules.
+	 */
+	pages_build_output_dir?: string;
+}
 
 export interface ConfigFields<Dev extends RawDevConfig> {
 	configPath: string | undefined;
