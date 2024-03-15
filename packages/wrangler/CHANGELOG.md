@@ -1,5 +1,17 @@
 # wrangler
 
+## 3.35.0
+
+### Minor Changes
+
+- [#5093](https://github.com/cloudflare/workers-sdk/pull/5093) [`a676f55`](https://github.com/cloudflare/workers-sdk/commit/a676f55a457a8b34b1c80f666f615eb258ad58c4) Thanks [@benycodes](https://github.com/benycodes)! - feature: add --dispatch-namespace to wrangler deploy to support uploading Workers directly to a Workers for Platforms dispatch namespace.
+
+### Patch Changes
+
+- [#5069](https://github.com/cloudflare/workers-sdk/pull/5069) [`8f79981`](https://github.com/cloudflare/workers-sdk/commit/8f799812a3de1c93fb4dcb7a2a89e60c2c0173cd) Thanks [@RamIdeas](https://github.com/RamIdeas)! - chore: deprecate `wrangler version` command
+
+  `wrangler version` is an undocumented alias for `wrangler --version`. It is being deprecated in favour of the more conventional flag syntax to avoid confusion with a new (upcoming) `wrangler versions` command.
+
 ## 3.34.2
 
 ### Patch Changes

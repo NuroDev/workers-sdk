@@ -1,5 +1,14 @@
 # @cloudflare/vitest-pool-workers
 
+## 0.1.3
+
+### Patch Changes
+
+- [#5261](https://github.com/cloudflare/workers-sdk/pull/5261) [`4618fb0`](https://github.com/cloudflare/workers-sdk/commit/4618fb0060d5963be0859156437032ae3f5227f7) Thanks [@mrbbot](https://github.com/mrbbot)! - fix: link [migration guide](https://developers.cloudflare.com/workers/testing/vitest-integration/get-started/migrate-from-miniflare-2/) when `environment: "miniflare"` is specified in Vitest configuration
+
+- Updated dependencies [[`a676f55`](https://github.com/cloudflare/workers-sdk/commit/a676f55a457a8b34b1c80f666f615eb258ad58c4), [`8f79981`](https://github.com/cloudflare/workers-sdk/commit/8f799812a3de1c93fb4dcb7a2a89e60c2c0173cd)]:
+  - wrangler@3.35.0
+
 ## 0.1.2
 
 ### Patch Changes

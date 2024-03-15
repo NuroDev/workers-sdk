@@ -1,5 +1,18 @@
 # create-cloudflare
 
+## 2.14.3
+
+### Patch Changes
+
+- [#5218](https://github.com/cloudflare/workers-sdk/pull/5218) [`0c535e7`](https://github.com/cloudflare/workers-sdk/commit/0c535e7236cbfc4bf856889454298bb434e48650) Thanks [@jculvey](https://github.com/jculvey)! - refactor: Refactor C3 internal helpers. Includes a few small changes:
+
+  - Drops `--save` from internal `pnpm` and `npm` install invocations
+  - Switches to `git branch --show-current` for detecting current branch
+
+- [#5242](https://github.com/cloudflare/workers-sdk/pull/5242) [`86c5f98`](https://github.com/cloudflare/workers-sdk/commit/86c5f98626464281dfe44b25ec8c95c98a67a3dd) Thanks [@jculvey](https://github.com/jculvey)! - chore: Remove custom `getPlatformProxy` hook from SvelteKit template.
+
+  `sveltejs/adapter-cloudflare@4.2.0` has been [released](https://github.com/sveltejs/kit/releases/tag/%40sveltejs%2Fadapter-cloudflare%404.2.0) which provides direct support for bindings emulation via `getPlatformProxy`, so the custom hook is no longer needed.
+
 ## 2.14.2
 
 ### Patch Changes
