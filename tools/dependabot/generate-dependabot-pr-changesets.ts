@@ -1,4 +1,3 @@
-import assert from "node:assert";
 import { spawnSync } from "node:child_process";
 import { writeFileSync } from "node:fs";
 import { resolve } from "node:path";
@@ -151,7 +150,7 @@ export function commitAndPush(commitMessage: string): void {
 }
 
 function executeCommand(command: string, args: string[]): string[] {
-	const { output, error, status, stdout, stderr } = spawnSync(command, args, {
+	const { output, error, status, stderr } = spawnSync(command, args, {
 		encoding: "utf-8",
 	});
 	if (status || error) {
